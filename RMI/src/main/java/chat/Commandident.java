@@ -11,7 +11,7 @@ public class Commandident {
         comP = new Commands(ob);        
     }
 
-	public void interpretator(String inLine){
+    public void interpretator(String inLine){
 
         String[] comandMas = parser.parsForComand(inLine);
 
@@ -37,11 +37,34 @@ public class Commandident {
                 case "msg":
                     comP.msg(comandMas);
                     break;
+
+                case "file":
+                    comP.file(comandMas);
+                    break;
+
+                case "receivemsg":
+                    comP.receiveMsg();
+                    break;
+
+                case "receivefile":
+                    comP.receiveFile();
+                    break;
+
                 case "exit":
                     comP.exit();
                     break;
+
                 default:
-                    System.out.println("No command");
+                    System.out.println("No this comand");
                     break;
+            }
+        } catch (Exception ex) {
+            System.out.println("Interpretator problem");
+            ex.printStackTrace();
+        }
+    }
+
+
+	
 
 }
