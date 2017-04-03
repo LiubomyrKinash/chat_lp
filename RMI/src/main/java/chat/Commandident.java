@@ -7,7 +7,7 @@ public class Commandident {
 	private final Commands comP;
 	private final Pars parser = new Pars();
 
-	public Interpretator(IServer ob) {
+	public Commandident(IServer ob) {
         comP = new Commands(ob);        
     }
 
